@@ -1,0 +1,57 @@
+<script>
+    function AddNewContact(){
+        alert("test");
+    }
+</script>
+<div class="page">
+    <div class="navbar">
+        <div class="navbar-inner sliding">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="ios-only">Back</span>
+                </a>
+            </div>
+            <div class="title">Kontakte</div>
+
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab fab-right-bottom">
+        <a href="#">
+            <i class="icon f7-icons">Fertig</i>
+        </a>
+    </div>
+
+    <div class="page-content">
+        <form class="list" id="my-form">
+            <ul>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">Name</div>
+                            <div class="item-input-wrap">
+                                <input type="text" name="name" placeholder="Name">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">Telefonummer</div>
+                            <div class="item-input-wrap">
+                                <input type="tel" name="number" placeholder="Telefonnummer">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+
+        <div class="block block-strong row">
+            <div class="col"><a class="button" onclick="AddNewContact()" href="#">Get Data</a></div>
+        </div>
+    </div>
+</div>

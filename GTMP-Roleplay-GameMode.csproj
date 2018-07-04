@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFF705E0-3584-414C-92CF-A6D04CC84479}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Roleplay</RootNamespace>
+    <AssemblyName>GTMP-Roleplay-GameMode</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="GrandTheftMultiplayer.Server">
+      <HintPath>E:\GT-MP Open Beta\GrandTheftMultiplayer.Server.exe</HintPath>
+    </Reference>
+    <Reference Include="GrandTheftMultiplayer.Shared">
+      <HintPath>E:\GT-MP Open Beta\GrandTheftMultiplayer.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.7\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.10.7\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>E:\GT-MP Open Beta\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PureVoiceServer">
+      <HintPath>.\PureVoiceServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201805081430152_AddedAccounts.cs" />
+    <Compile Include="Migrations\201805081430152_AddedAccounts.Designer.cs">
+      <DependentUpon>201805081430152_AddedAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805091745207_LoginRegister.cs" />
+    <Compile Include="Migrations\201805091745207_LoginRegister.Designer.cs">
+      <DependentUpon>201805091745207_LoginRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805101137394_AddedCharacterPosition.cs" />
+    <Compile Include="Migrations\201805101137394_AddedCharacterPosition.Designer.cs">
+      <DependentUpon>201805101137394_AddedCharacterPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805101543530_UpdateTables.cs" />
+    <Compile Include="Migrations\201805101543530_UpdateTables.Designer.cs">
+      <DependentUpon>201805101543530_UpdateTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805102318134_ChangedCharSpawnRotationToDouble.cs" />
+    <Compile Include="Migrations\201805102318134_ChangedCharSpawnRotationToDouble.Designer.cs">
+      <DependentUpon>201805102318134_ChangedCharSpawnRotationToDouble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805111408591_AddedBankAccounts.cs" />
+    <Compile Include="Migrations\201805111408591_AddedBankAccounts.Designer.cs">
+      <DependentUpon>201805111408591_AddedBankAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805111415042_AddedCharacterBankAccounts.cs" />
+    <Compile Include="Migrations\201805111415042_AddedCharacterBankAccounts.Designer.cs">
+      <DependentUpon>201805111415042_AddedCharacterBankAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805112159077_AddedOwnerFieldsToBankAccount.cs" />
+    <Compile Include="Migrations\201805112159077_AddedOwnerFieldsToBankAccount.Designer.cs">
+      <DependentUpon>201805112159077_AddedOwnerFieldsToBankAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805120811267_SalaryTimer.cs" />
+    <Compile Include="Migrations\201805120811267_SalaryTimer.Designer.cs">
+      <DependentUpon>201805120811267_SalaryTimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805120831578_AddedPrivateBankAccounts.cs" />
+    <Compile Include="Migrations\201805120831578_AddedPrivateBankAccounts.Designer.cs">
+      <DependentUpon>201805120831578_AddedPrivateBankAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805120857373_AddedKeyRing.cs" />
+    <Compile Include="Migrations\201805120857373_AddedKeyRing.Designer.cs">
+      <DependentUpon>201805120857373_AddedKeyRing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805120907212_AddedOwnedVehicles.cs" />
+    <Compile Include="Migrations\201805120907212_AddedOwnedVehicles.Designer.cs">
+      <DependentUpon>201805120907212_AddedOwnedVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805120911252_ExtendOwnedVehicle.cs" />
+    <Compile Include="Migrations\201805120911252_ExtendOwnedVehicle.Designer.cs">
+      <DependentUpon>201805120911252_ExtendOwnedVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805120939218_Garages.cs" />
+    <Compile Include="Migrations\201805120939218_Garages.Designer.cs">
+      <DependentUpon>201805120939218_Garages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805121050297_GarageEnableDisableFnc.cs" />
+    <Compile Include="Migrations\201805121050297_GarageEnableDisableFnc.Designer.cs">
+      <DependentUpon>201805121050297_GarageEnableDisableFnc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805121055218_AddedPedOptionsToGargae.cs" />
+    <Compile Include="Migrations\201805121055218_AddedPedOptionsToGargae.Designer.cs">
+      <DependentUpon>201805121055218_AddedPedOptionsToGargae.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805121058588_AddedGarageName.cs" />
+    <Compile Include="Migrations\201805121058588_AddedGarageName.Designer.cs">
+      <DependentUpon>201805121058588_AddedGarageName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805121343334_AddedExtraFieldsToOVeh.cs" />
+    <Compile Include="Migrations\201805121343334_AddedExtraFieldsToOVeh.Designer.cs">
+      <DependentUpon>201805121343334_AddedExtraFieldsToOVeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805122344416_AddedEngineHealth.cs" />
+    <Compile Include="Migrations\201805122344416_AddedEngineHealth.Designer.cs">
+      <DependentUpon>201805122344416_AddedEngineHealth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805131454431_AddedItemInformations.cs" />
+    <Compile Include="Migrations\201805131454431_AddedItemInformations.Designer.cs">
+      <DependentUpon>201805131454431_AddedItemInformations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805131530129_AddedInventoryToCharacter.cs" />
+    <Compile Include="Migrations\201805131530129_AddedInventoryToCharacter.Designer.cs">
+      <DependentUpon>201805131530129_AddedInventoryToCharacter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Server\Admin\Commands.cs" />
+    <Compile Include="Server\Base\Constants.cs" />
+    <Compile Include="Server\Base\Messages.cs" />
+    <Compile Include="Server\Base\RoleplayScript.cs" />
+    <Compile Include="Server\Base\JsonConverter.cs" />
+    <Compile Include="Server\Base\RealScript.cs" />
+    <Compile Include="Server\Controller\AccountController.cs" />
+    <Compile Include="Server\Controller\Admin\AdminVehicleController.cs" />
+    <Compile Include="Server\Controller\AntiCheatController.cs" />
+    <Compile Include="Server\Controller\BankController.cs" />
+    <Compile Include="Server\Controller\CharacterController.cs" />
+    <Compile Include="Server\Controller\CharacterEditorController.cs" />
+    <Compile Include="Server\Controller\CharacterInventoryController.cs" />
+    <Compile Include="Server\Controller\GarageController.cs" />
+    <Compile Include="Server\Controller\ItemController.cs" />
+    <Compile Include="Server\Controller\MenuController.cs" />
+    <Compile Include="Server\Controller\OwnedVehicleController.cs" />
+    <Compile Include="Server\Enums\BankAccountHistoryType.cs" />
+    <Compile Include="Server\Enums\GarageType.cs" />
+    <Compile Include="Server\Enums\InteractionMenuPositions.cs" />
+    <Compile Include="Server\Enums\ItemType.cs" />
+    <Compile Include="Server\Managers\DimensionManager.cs" />
+    <Compile Include="Server\Managers\ItemDisposeManager.cs" />
+    <Compile Include="Server\Managers\ItemUsageManager.cs" />
+    <Compile Include="Server\Models\BankAccount.cs" />
+    <Compile Include="Server\Models\Garage.cs" />
+    <Compile Include="Server\Models\InteractData.cs" />
+    <Compile Include="Server\Controller\InteractionController.cs" />
+    <Compile Include="Server\Controller\SpawnController.cs" />
+    <Compile Include="Server\Controller\WorldEnvironmentController.cs" />
+    <Compile Include="Server\Database.cs" />
+    <Compile Include="Migrations\201805071830267_Database.cs" />
+    <Compile Include="Migrations\201805071830267_Database.Designer.cs">
+      <DependentUpon>201805071830267_Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\Discord\DiscordService.cs" />
+    <Compile Include="Server\Discord\Embed.cs" />
+    <Compile Include="Server\Discord\Extensions.cs" />
+    <Compile Include="Server\Discord\Webhook.cs" />
+    <Compile Include="Server\Enums\AdminLevel.cs" />
+    <Compile Include="Server\Enums\AnimationFlags.cs" />
+    <Compile Include="Server\Enums\BusySpinnerType.cs" />
+    <Compile Include="Server\Enums\Gender.cs" />
+    <Compile Include="Server\Enums\HudColor.cs" />
+    <Compile Include="Server\Enums\RadioModes.cs" />
+    <Compile Include="Server\Enums\ScreenEffect.cs" />
+    <Compile Include="Server\Enums\ScriptPriority.cs" />
+    <Compile Include="Server\Extensions\ClientExtensions.cs" />
+    <Compile Include="Server\Extensions\EntityExtensions.cs" />
+    <Compile Include="Server\Extensions\NetExtensions.cs" />
+    <Compile Include="Server\GameMode.cs" />
+    <Compile Include="Server\Handler\ConnectionHandler.cs" />
+    <Compile Include="Server\Managers\ClientEventManager.cs" />
+    <Compile Include="Server\Models\Account.cs" />
+    <Compile Include="Server\Models\Character.cs" />
+    <Compile Include="Server\Models\CharacterClothing.cs" />
+    <Compile Include="Server\Models\CharacterClothingComponent.cs" />
+    <Compile Include="Server\Models\CharacterStyle.cs" />
+    <Compile Include="Server\Models\InventoryItem.cs" />
+    <Compile Include="Server\Models\ItemInfo.cs" />
+    <Compile Include="Server\Models\Json\AtmOverviewMenu.cs" />
+    <Compile Include="Server\Models\Json\GarageVehicleList.cs" />
+    <Compile Include="Server\Models\KeyRing.cs" />
+    <Compile Include="Server\Models\MenuBuilder\Menu.cs" />
+    <Compile Include="Server\Models\OwnedVehicle.cs" />
+    <Compile Include="Server\Voice\RadioController.cs" />
+    <Compile Include="Server\Voice\TeamspeakController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805071830267_Database.resx">
+      <DependentUpon>201805071830267_Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805081430152_AddedAccounts.resx">
+      <DependentUpon>201805081430152_AddedAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805091745207_LoginRegister.resx">
+      <DependentUpon>201805091745207_LoginRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805101137394_AddedCharacterPosition.resx">
+      <DependentUpon>201805101137394_AddedCharacterPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805101543530_UpdateTables.resx">
+      <DependentUpon>201805101543530_UpdateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805102318134_ChangedCharSpawnRotationToDouble.resx">
+      <DependentUpon>201805102318134_ChangedCharSpawnRotationToDouble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805111408591_AddedBankAccounts.resx">
+      <DependentUpon>201805111408591_AddedBankAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805111415042_AddedCharacterBankAccounts.resx">
+      <DependentUpon>201805111415042_AddedCharacterBankAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805112159077_AddedOwnerFieldsToBankAccount.resx">
+      <DependentUpon>201805112159077_AddedOwnerFieldsToBankAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120811267_SalaryTimer.resx">
+      <DependentUpon>201805120811267_SalaryTimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120831578_AddedPrivateBankAccounts.resx">
+      <DependentUpon>201805120831578_AddedPrivateBankAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120857373_AddedKeyRing.resx">
+      <DependentUpon>201805120857373_AddedKeyRing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120907212_AddedOwnedVehicles.resx">
+      <DependentUpon>201805120907212_AddedOwnedVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120911252_ExtendOwnedVehicle.resx">
+      <DependentUpon>201805120911252_ExtendOwnedVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120939218_Garages.resx">
+      <DependentUpon>201805120939218_Garages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805121050297_GarageEnableDisableFnc.resx">
+      <DependentUpon>201805121050297_GarageEnableDisableFnc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805121055218_AddedPedOptionsToGargae.resx">
+      <DependentUpon>201805121055218_AddedPedOptionsToGargae.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805121058588_AddedGarageName.resx">
+      <DependentUpon>201805121058588_AddedGarageName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805121343334_AddedExtraFieldsToOVeh.resx">
+      <DependentUpon>201805121343334_AddedExtraFieldsToOVeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805122344416_AddedEngineHealth.resx">
+      <DependentUpon>201805122344416_AddedEngineHealth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805131454431_AddedItemInformations.resx">
+      <DependentUpon>201805131454431_AddedItemInformations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805131530129_AddedInventoryToCharacter.resx">
+      <DependentUpon>201805131530129_AddedInventoryToCharacter.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Client\CharCreator.ts" />
+    <Content Include="Client\meta.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Client\accountModals.ts" />
+    <TypeScriptCompile Include="Client\clientEvents.ts" />
+    <TypeScriptCompile Include="Client\menuManager.ts" />
+    <TypeScriptCompile Include="types-gt-mp\Declarations.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Contracts.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.GUI.CEF.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Javascript.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Javascript.ScriptContext.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Models.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Models.Game.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Sound.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Client.Sync.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Shared.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GrandTheftMultiplayer.Shared.Math.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.Math.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.Native.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.NaturalMotion.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\GTA.UI.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\index.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\Microsoft.ClearScript.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.UIMenu.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.UIMenuDynamicListItem.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.UIMenuItem.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\NativeUI.UIResText.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.Collections.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.Collections.Generic.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.Drawing.d.ts" />
+    <TypeScriptCompile Include="types-gt-mp\System.Windows.Forms.d.ts" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

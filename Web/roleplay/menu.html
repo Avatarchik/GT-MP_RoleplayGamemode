@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/shards.min.css">
+  </head>
+  <body style="background-color: rgba(255, 255, 255, 0);">
+    
+	<div class="container" style="padding-top: 200px;">
+		<div class="row justify-content-md-center">
+			<div class="col-md-auto">
+				<div class="card" style="width: 440px;">
+				  <div class="card-body">
+					  <h4 id="title" class="card-title">Menu</h4>
+					  <div id="items">
+					  </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var data = null;
+		function FillWindow(jsonString) {
+			data = JSON.parse(jsonString);
+			$("#title").html(data["Title"]);
+			for(var i = 0; i < data["Items"].length; i++){
+				var item = data["Items"][i];
+				$("#items").append('<button onclick="ButtonClick(' + item["EventTrigger"] + ', ' + item["EventTriggerInt"] + ')" class="btn btn-' + item["Color"] + ' btn-block">' + item["Title"] + '</button>');
+			}
+		}
+
+		function ButtonClick(event, id) {
+			resourceCall("TriggerServerEventWithArg", event, id);
+			CloseWindow();
+		}
+
+		function CloseWindow(){
+			resourceCall("TriggerServerEvent", "GARAGE_CLOSE");
+		}
+	</script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/shards.min.js"></script>
+  </body>
+</html>

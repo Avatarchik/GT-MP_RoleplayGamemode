@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/shards.min.css">
+  </head>
+  <body style="background-color: rgba(255, 255, 255, 0);">
+    
+	<div class="container" style="padding-top: 250px;">
+		<div class="row justify-content-md-center">
+			<div class="col-md-auto">
+				<div class="card" style="width: 440px;">
+				  <div class="card-body">
+					<h4 class="card-title">Neuen Account erstellen</h4>
+					<p class="card-text">
+					<div class="form-group">
+						<label for="password">Passwort</label>
+						<input id="password" type="password" class="form-control" autofocus />
+					</div>
+					<div class="form-group">
+						<label for="repassword">Passwort wiederholen</label>
+						<input id="repassword" type="password" class="form-control" />
+						</div>
+					</p>
+					
+					<button onclick="Register()" class="btn btn-primary btn-block">Registrieren</button>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	var input = document.getElementById("repassword");
+	input.addEventListener("keyup", function(event) {
+	  event.preventDefault();
+	  if (event.keyCode === 13) {
+		Register();
+	  }
+	});
+	function Register(){
+		var password = document.getElementById("password").value;
+		var repassword = document.getElementById("repassword").value;
+		resourceCall("SendAccountModelDataToServer", "REGISTER_ACCOUNT", password, repassword);
+	}
+	</script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/shards.min.js"></script>
+  </body>
+</html>

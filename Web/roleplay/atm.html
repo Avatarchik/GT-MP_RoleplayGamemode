@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/shards.min.css">
+  </head>
+  <body style="background-color: rgba(255, 255, 255, 0);">
+    
+	<div class="container" style="padding-top: 100px;">
+		<div class="row justify-content-md-center">
+			<div class="col-md-auto">
+				<div class="card" style="width: 700px;">
+				  <div class="card-body">
+					  <div class="row"><div clas="col-md-9"> <h4 id="title" class="card-title">Kontostand</h4></div><div class="col-md-3"><button onclick="CloseMenu()" class="btn btn-sm btn-warning">Abbruch</button></div></div>
+					  <p id="amount">-</p>
+					  <h4 class="card-title">Abheben/Einzahlen</h4>
+					  <div class="row" style="vertical-align: bottom;">
+					  <div class="form-group col-md-7">
+						  <label for="withdrawdebosit">Menge</label>
+						  <input id="withdrawdebosit" type="number" class="form-control" placeholder="Menge" value="0" autofocus />
+					  </div>
+						  <div class="col-md-5 text-right">
+							  <div class="btn-group" style="height: 100%;" role="group" aria-label="Basic example">
+								  <button type="button" onclick="Withdraw()" class="btn btn-primary">Abheben</button>
+								  <button type="button" onclick="Deposit()" class="btn btn-success">Einzahlen</button>
+							  </div>
+						  </div>
+					  </div>
+					  <h4 class="card-title">Transaktionen</h4>
+					  <div style="overflow-y:auto; max-height: 400px;">
+					  <table id="history" class="table">
+						  <thead class="thead-dark">
+						  <tr>
+							  <th scope="col">Typ</th>
+							  <th scope="col">Menge</th>
+							  <th scope="col">Zeitpunkt</th>
+						  </tr>
+						  </thead>
+						  <tbody id="historyitems">
+
+						  </tbody>
+					  </table>
+					  </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function FillDisplay(jsonString){
+			var bank = JSON.parse(jsonString);
+			$("#title").html("Kontostand (" + bank["AccountNumber"] + ")");
+			$("#amount").html(bank["AccountValue"]);
+			$("#historyitems").empty();
+			for(var i = 0; i < bank["History"].length; i++){
+			    var item = bank["History"][i];
+			    $("#history").append('<tr><td>' + item["Type"] +'</td><td>' + item["Amount"] +'</td><td>' + item["Date"] +'</td></tr>');
+			}
+            $("#withdrawdebosit").val(0);
+		}
+
+		function Withdraw(){
+            resourceCall("TriggerServerEventWithArg", "WITHDRAW", $("#withdrawdebosit").val());
+		}
+
+		function Deposit() {
+            resourceCall("TriggerServerEventWithArg", "DEPOSIT", $("#withdrawdebosit").val());
+        }
+
+        function CloseMenu() {
+			resourceCall("TriggerServerEvent", "CloseAtmMenu");
+        }
+	</script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/shards.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTMP-Roleplay-GameMode", "GTMP-Roleplay-GameMode.csproj", "{AFF705E0-3584-414C-92CF-A6D04CC84479}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFF705E0-3584-414C-92CF-A6D04CC84479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF705E0-3584-414C-92CF-A6D04CC84479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF705E0-3584-414C-92CF-A6D04CC84479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF705E0-3584-414C-92CF-A6D04CC84479}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A62D50DA-3992-47A0-AED0-14A8942C0B0E}
+	EndGlobalSection
+EndGlobal
